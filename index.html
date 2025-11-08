@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>随便写点</title>
+    <style>
+      :root {
+        font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont,
+          "Helvetica Neue", sans-serif;
+        background: #f6f8fb;
+        color: #1f1f1f;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+      main {
+        max-width: 600px;
+        background: #fff;
+        padding: 2.5rem;
+        border-radius: 18px;
+        box-shadow: 0 25px 60px -35px rgba(15, 23, 42, 0.45);
+        text-align: center;
+      }
+      h1 {
+        margin: 0 0 1rem;
+        font-size: clamp(2rem, 4vw, 2.8rem);
+      }
+      p {
+        margin: 0 0 1.5rem;
+        line-height: 1.6;
+        color: #4b5563;
+      }
+      button {
+        border: none;
+        border-radius: 999px;
+        padding: 0.85rem 1.8rem;
+        font-size: 1rem;
+        cursor: pointer;
+        color: #fff;
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        box-shadow: 0 12px 24px -12px rgba(79, 70, 229, 0.65);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 30px -18px rgba(79, 70, 229, 0.75);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>你好，世界 👋</h1>
+      <p>
+        这是一个随手写的页面，用来测试下环境。没有框架，没有构建工具，只有一点点文字和渐变按钮。
+      </p>
+      <button onclick="alert('开心就好！')">点我一下</button>
+    </main>
+  </body>
+</html>
