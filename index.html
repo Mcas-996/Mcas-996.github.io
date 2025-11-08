@@ -56,6 +56,26 @@
                 transform: translateY(-2px);
                 box-shadow: 0 16px 30px -18px rgba(79, 70, 229, 0.75);
             }
+            .dev-btn {
+                background: radial-gradient(
+                    circle at top,
+                    #f97316,
+                    #ef4444 45%,
+                    #b91c1c
+                );
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+                position: relative;
+            }
+            .dev-btn::after {
+                content: "⚡";
+                margin-left: 0.5rem;
+                filter: drop-shadow(0 0 6px rgba(249, 115, 22, 0.8));
+            }
+            .dev-btn:focus-visible {
+                outline: 2px solid #f97316;
+                outline-offset: 4px;
+            }
         </style>
     </head>
     <body>
@@ -73,7 +93,9 @@
                 "
             >
                 <button onclick="alert('开心就好！')">点我一下</button>
-                <button onclick="alert('拒绝996')">程序员入口</button>
+                <button class="dev-btn" onclick="alert('拒绝996')">
+                    程序员入口
+                </button>
             </div>
         </main>
     </body>
