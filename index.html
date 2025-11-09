@@ -1,102 +1,204 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>随便写点</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Mcas-996 | Featured Projects</title>
         <style>
             :root {
+                color-scheme: light dark;
+                --bg: #05060a;
+                --panel: rgba(255, 255, 255, 0.07);
+                --border: rgba(255, 255, 255, 0.3);
+                --text: #f5f7ff;
+                --link: #7dd3fc;
+                --accent: #38bdf8;
+            }
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                margin: 0;
+                min-height: 100vh;
                 font-family:
                     "Segoe UI",
                     system-ui,
                     -apple-system,
                     BlinkMacSystemFont,
-                    "Helvetica Neue",
                     sans-serif;
-                background: #f6f8fb;
-                color: #1f1f1f;
-            }
-            body {
-                margin: 0;
-                min-height: 100vh;
-                display: grid;
-                place-items: center;
-            }
-            main {
-                max-width: 600px;
-                background: #fff;
-                padding: 2.5rem;
-                border-radius: 18px;
-                box-shadow: 0 25px 60px -35px rgba(15, 23, 42, 0.45);
-                text-align: center;
-            }
-            h1 {
-                margin: 0 0 1rem;
-                font-size: clamp(2rem, 4vw, 2.8rem);
-            }
-            p {
-                margin: 0 0 1.5rem;
-                line-height: 1.6;
-                color: #4b5563;
-            }
-            button {
-                border: none;
-                border-radius: 999px;
-                padding: 0.85rem 1.8rem;
-                font-size: 1rem;
-                cursor: pointer;
-                color: #fff;
-                background: linear-gradient(135deg, #6366f1, #8b5cf6);
-                box-shadow: 0 12px 24px -12px rgba(79, 70, 229, 0.65);
-                transition:
-                    transform 0.2s ease,
-                    box-shadow 0.2s ease;
-            }
-            button:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 16px 30px -18px rgba(79, 70, 229, 0.75);
-            }
-            .dev-btn {
                 background: radial-gradient(
                     circle at top,
-                    #f97316,
-                    #ef4444 45%,
-                    #b91c1c
+                    #101727 0%,
+                    #03050b 55%
                 );
+                color: var(--text);
+                display: flex;
+                justify-content: center;
+                padding: 32px;
+            }
+            .page {
+                width: min(960px, 100%);
+                background: rgba(3, 6, 14, 0.82);
+                border: 1px solid var(--panel);
+                border-radius: 20px;
+                padding: 48px clamp(24px, 5vw, 56px);
+                box-shadow: 0 20px 60px rgba(3, 6, 14, 0.6);
+                backdrop-filter: blur(18px);
+            }
+            .hero {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .eyebrow {
                 text-transform: uppercase;
-                letter-spacing: 0.04em;
-                position: relative;
+                letter-spacing: 0.3em;
+                font-size: 0.8rem;
+                color: var(--accent);
+                margin-bottom: 12px;
             }
-            .dev-btn::after {
-                content: "⚡";
-                margin-left: 0.5rem;
-                filter: drop-shadow(0 0 6px rgba(249, 115, 22, 0.8));
+            h1 {
+                margin: 0 0 12px;
+                font-size: clamp(2rem, 5vw, 3rem);
             }
-            .dev-btn:focus-visible {
-                outline: 2px solid #f97316;
-                outline-offset: 4px;
+            .lead {
+                margin: 0 auto;
+                max-width: 640px;
+                font-size: 1.1rem;
+                color: rgba(245, 247, 255, 0.85);
+            }
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                gap: 18px;
+                margin-bottom: 40px;
+            }
+            .card {
+                border: 1px solid var(--panel);
+                border-radius: 14px;
+                padding: 24px;
+                background: var(--panel);
+                text-decoration: none;
+                color: inherit;
+                transition:
+                    transform 0.2s ease,
+                    border-color 0.2s ease,
+                    background 0.2s ease;
+            }
+            .card:hover,
+            .card:focus-visible {
+                transform: translateY(-3px);
+                border-color: var(--accent);
+                background: rgba(56, 189, 248, 0.12);
+                outline: none;
+            }
+            .card h2 {
+                margin: 0 0 10px;
+                font-size: 1.2rem;
+            }
+            .card p {
+                margin: 0 0 16px;
+                color: rgba(245, 247, 255, 0.9);
+            }
+            .tags {
+                display: flex;
+                gap: 8px;
+                flex-wrap: wrap;
+                font-size: 0.85rem;
+            }
+            .tag {
+                padding: 4px 10px;
+                border-radius: 999px;
+                background: rgba(255, 255, 255, 0.15);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+            .footer {
+                text-align: center;
+                font-size: 0.9rem;
+                color: rgba(245, 247, 255, 0.65);
+            }
+            .footer a {
+                color: var(--link);
+            }
+            @media (max-width: 600px) {
+                body {
+                    padding: 16px;
+                }
+                .page {
+                    padding: 32px 20px;
+                }
             }
         </style>
     </head>
     <body>
-        <main>
-            <h1>你好，世界 👋</h1>
-            <p>
-                这是一个随手写的页面，用来测试下环境。没有框架，没有构建工具，只有一点点文字和渐变按钮。
+        <main class="page">
+            <header class="hero">
+                <p class="eyebrow">Open-source spotlight</p>
+                <h1>Explore Mcas-996 projects</h1>
+                <p class="lead">
+                    Three small but mighty repositories that showcase number
+                    theory experiments, cryptography, and CLI ergonomics. Pick a
+                    project to dive into the code.
+                </p>
+            </header>
+            <section class="grid">
+                <a
+                    class="card"
+                    href="https://github.com/Mcas-996/prime-number-gen.git"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <h2>Prime Number Generator</h2>
+                    <p>
+                        Fast experiments for generating prime numbers with tuned
+                        algorithms and benchmarking utilities.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">C++</span>
+                        <span class="tag">Math</span>
+                    </div>
+                </a>
+                <a
+                    class="card"
+                    href="https://github.com/Mcas-996/RSA_CPP.git"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <h2>RSA_CPP</h2>
+                    <p>
+                        Educational RSA implementation highlighting key
+                        generation, encryption, and decryption workflow.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Cryptography</span>
+                        <span class="tag">C++</span>
+                    </div>
+                </a>
+                <a
+                    class="card"
+                    href="https://github.com/Mcas-996/calculator-cli.git"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <h2>Calculator CLI</h2>
+                    <p>
+                        Minimal command-line calculator built for quick
+                        arithmetic with friendly prompts.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">CLI</span>
+                        <span class="tag">Utilities</span>
+                    </div>
+                </a>
+            </section>
+            <p class="footer">
+                More projects on
+                <a
+                    href="https://github.com/Mcas-996"
+                    target="_blank"
+                    rel="noreferrer"
+                    >github.com/Mcas-996</a
+                >
             </p>
-            <div
-                style="
-                    display: flex;
-                    gap: 1rem;
-                    justify-content: center;
-                    flex-wrap: wrap;
-                "
-            >
-                <button onclick="alert('开心就好！')">点我一下</button>
-                <button class="dev-btn" onclick="alert('拒绝996')">
-                    程序员入口
-                </button>
-            </div>
         </main>
     </body>
 </html>
